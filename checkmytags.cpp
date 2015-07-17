@@ -33,9 +33,6 @@ struct Tag{
 string lookforfile = "lookfor.conf";
 
 vector<Tag> tags;
-int table = 0;
-int tr = 0;
-int td = 0;
 
 void getLookFor(char* file[] = NULL){
     if(file != NULL)
