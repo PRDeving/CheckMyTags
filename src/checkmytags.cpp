@@ -34,9 +34,11 @@ string lookforfile = "lookfor.conf";
 
 vector<Tag> tags;
 
-void getLookFor(char* file[] = NULL){
+void getLookFor(char file[]){
     if(file != NULL)
-        lookforfile = *file;
+        lookforfile = file;
+
+    cout << lookforfile << endl;
 
     string line;
     ifstream is(lookforfile.c_str());
@@ -61,7 +63,7 @@ int countSubstring(const string* str, const string sub){
 }
 
 void checkIf(string* line){
-    for(int x = 0; x < tags.size(); x++){
+    for(unsigned int x = 0; x < tags.size(); x++){
         if(line->find(tags[x].name) != string::npos){
             tags[x].count += countSubstring(line, tags[x].name);
         }
@@ -73,7 +75,7 @@ void checkIf(string* line){
 
 int main(int argc, char* argv[]){
 
-    getLookFor();
+    getLookFor(argv[2]);
     int count = 0;    
 
     string line;
@@ -91,7 +93,7 @@ int main(int argc, char* argv[]){
     cout << endl << endl << count << " lines analyzed." << endl
          << "____________________________" << endl <<endl;
 
-    for(int x = 0; x < tags.size(); x++){
+    for(unsigned int x = 0; x < tags.size(); x++){
         if(tags[x].count < 0){
             cout << abs(tags[x].count) << " " << tags[x].name << "> closes uneeded" << endl;
         }else if(tags[x].count > 0){
