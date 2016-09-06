@@ -1,8 +1,16 @@
 # CheckMyTags
 Analyze any document an looks for unclosed html tags
 
-HOW TO USE:
+## HOW TO USE:
 
+### EASY
+```
+$ make
+$ sudo make install
+```
+lookfor.conf will be stored in /etc/checkmytags
+
+# HARD
 go to src/ folder and...
 
 1- Modify it if you want

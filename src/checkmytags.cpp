@@ -30,7 +30,7 @@ struct Tag{
     int count;
 };
 
-string lookforfile = "lookfor.conf";
+string lookforfile = "/etc/checkmytags/lookfor.conf";
 
 vector<Tag> tags;
 
